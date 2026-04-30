@@ -59,8 +59,8 @@ Focused on solving the automation and real-time processing gaps identified by IT
 
 * **Live Dashboard:** Deployed a real-time monitoring UI directly within Node-RED for immediate environmental tracking.
 
-![Node-RED](images/Node-RED-1.png)
-![Node-RED](images/Node-RED-2.png)
+  ![Node-RED](images/Node-RED-1.png)
+  ![Node-RED](images/Node-RED-2.png)
 
 ### 🎨 Iteration 3: Advanced Visualisation and User-Centric Optimisation
 The final phase aimed at maximizing usability and providing professional-grade decision support.
