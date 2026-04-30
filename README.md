@@ -45,6 +45,7 @@ Following the initial deployment, the system underwent functional, communication
 Focused on improving data accuracy and interpretation within the cloud platforms.
 * **ThingSpeak:** Integrated MATLAB analytics to create detailed charts, including a lamp pump indicator and a wind speed gauge.
 ![ThingSpeak](images/ThingSpeak-4.png)
+
 ![ThingSpeak](images/ThingSpeak-5.png)
 
 * **Power BI:** Applied Power Query transformations to clean and format the raw data, resulting in a much more organized and readable dashboard.
