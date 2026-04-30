@@ -80,18 +80,18 @@ The final phase aimed at maximizing usability and providing professional-grade d
 
 ## 📂 Repository Structure
 ```text
-mehrano-agri-farms-iot/
+IOT-Irrigation-System/
 ├── docs/
 │   └── ThingSpeak Reference Document.docx
 ├── cisco-simulation/
 │   └── Mehrano_IoT_Simulation.pkt
 ├── node-red/
 │   ├── Node-RED Workflow.json
-│   └── Power Query.json
 ├── power-bi/
 │   ├── Iteration 0.pbix
 │   ├── Iteration 2.pbix
-│   └── Iteration 3.pbix
+│   ├── Iteration 3.pbix
+│   └── Power Query.json
 ├── images/
 │   ├── Cisco.png
 │   ├── Node-RED.png
