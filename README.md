@@ -79,8 +79,7 @@ The final phase aimed at maximizing usability and providing professional-grade d
 ```text
 mehrano-agri-farms-iot/
 ├── docs/
-│   ├── ThingSpeak Reference Document.docx
-│   └── Unit20-AB1-Sahil Faraz (TG 36346).pdf
+│   └── ThingSpeak Reference Document.docx
 ├── cisco-simulation/
 │   └── Mehrano_IoT_Simulation.pkt
 ├── node-red/
