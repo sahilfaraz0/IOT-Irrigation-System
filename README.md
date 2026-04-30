@@ -75,7 +75,7 @@ The final phase aimed at maximizing usability and providing professional-grade d
 ![PowerBI](images/PowerBI-2.png)
 ![PowerBI](images/PowerBI-3.png)
 
-###                                          [Link to the Dashboard](https://app.powerbi.com/view?r=eyJrIjoiMDlhOWM3N2EtMzY4Ny00YzMzLWE0YzctOWIzOTA2YzhlNWI1IiwidCI6IjQwODVlNDhhLTQxODItNDkzNS1hOWY1LTQyOTU0Mzc1NTQ3YyIsImMiOjl9)
+### [Link to the Dashboard](https://app.powerbi.com/view?r=eyJrIjoiMDlhOWM3N2EtMzY4Ny00YzMzLWE0YzctOWIzOTA2YzhlNWI1IiwidCI6IjQwODVlNDhhLTQxODItNDkzNS1hOWY1LTQyOTU0Mzc1NTQ3YyIsImMiOjl9)
 ---
 
 ## 📂 Repository Structure
@@ -93,11 +93,21 @@ mehrano-agri-farms-iot/
 │   ├── Iteration 2.pbix
 │   └── Iteration 3.pbix
 ├── images/
-│   ├── cisco_setup.png
-│   ├── initial_power_bi.png
-│   ├── matlab_charts.png
-│   ├── nodered_workflow.png
-│   ├── nodered_live_dashboard.png
-│   ├── nodered_advanced_ui.png
-│   └── final_power_bi.png
+│   ├── Cisco.png
+│   ├── Node-RED.png
+│   ├── Node-RED-1.png
+│   ├── Node-RED-2.png
+│   ├── Node-RED-3.png
+│   ├── Node-RED-4.png
+│   ├── PowerBI.png
+│   ├── PowerBI-1.png
+│   ├── PowerBI-2.png
+│   ├── PowerBI-3.png
+│   ├── PowerBI-4.png
+│   ├── ThingSpeak.png
+│   ├── ThingSpeak-1.png
+│   ├── ThingSpeak-2.png
+│   ├── ThingSpeak-3.png
+│   ├── ThingSpeak-4.png
+│   └── ThingSpeak-5.png
 └── README.md
