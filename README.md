@@ -44,8 +44,8 @@ Following the initial deployment, the system underwent functional, communication
 ### 🛠️ Iteration 1: Data Processing and Cleaning
 Focused on improving data accuracy and interpretation within the cloud platforms.
 * **ThingSpeak:** Integrated MATLAB analytics to create detailed charts, including a lamp pump indicator and a wind speed gauge.
-![ThingSpeak](images/ThingSpeak-4.png)
 
+![ThingSpeak](images/ThingSpeak-4.png)
 ![ThingSpeak](images/ThingSpeak-5.png)
 
 * **Power BI:** Applied Power Query transformations to clean and format the raw data, resulting in a much more organized and readable dashboard.
@@ -58,6 +58,7 @@ Focused on solving the automation and real-time processing gaps identified by IT
 ![Node-RED](images/Node-RED.png)
 
 * **Live Dashboard:** Deployed a real-time monitoring UI directly within Node-RED for immediate environmental tracking.
+
 ![Node-RED](images/Node-RED-1.png)
 ![Node-RED](images/Node-RED-2.png)
 
