@@ -1,0 +1,28 @@
+let
+    Source = Json.Document(Web.Contents("https://api.thingspeak.com/channels/3326236/" & "feeds.json?api_key=T9HV37JVELHINJSS&results=8000")),
+    #"Converted to Table" = Table.FromRecords({Source}),
+    #"Expanded channel" = Table.ExpandRecordColumn(#"Converted to Table", "channel", {"id", "name", "description", "latitude", "longitude", "field1", "field2", "field3", "field4", "field5", "field6", "field7", "field8", "created_at", "updated_at", "last_entry_id"}, {"channel.id", "channel.name", "channel.description", "channel.latitude", "channel.longitude", "channel.field1", "channel.field2", "channel.field3", "channel.field4", "channel.field5", "channel.field6", "channel.field7", "channel.field8", "channel.created_at", "channel.updated_at", "channel.last_entry_id"}),
+    #"Expanded feeds" = Table.ExpandListColumn(#"Expanded channel", "feeds"),
+    #"Expanded feeds1" = Table.ExpandRecordColumn(#"Expanded feeds", "feeds", {"created_at", "entry_id", "field1", "field2", "field3", "field4", "field5", "field6", "field7", "field8"}, {"feeds.created_at", "feeds.entry_id", "feeds.field1", "feeds.field2", "feeds.field3", "feeds.field4", "feeds.field5", "feeds.field6", "feeds.field7", "feeds.field8"}),
+    #"Changed Type" = Table.TransformColumnTypes(#"Expanded feeds1",{{"channel.id", Int64.Type}, {"channel.name", type text}, {"channel.description", type text}, {"channel.latitude", Int64.Type}, {"channel.longitude", Int64.Type}, {"channel.field1", type text}, {"channel.field2", type text}, {"channel.field3", type text}, {"channel.field4", type text}, {"channel.field5", type text}, {"channel.field6", type text}, {"channel.field7", type text}, {"channel.field8", type text}, {"channel.created_at", type datetime}, {"channel.updated_at", type datetime}, {"channel.last_entry_id", Int64.Type}, {"feeds.created_at", type datetime}, {"feeds.entry_id", Int64.Type}, {"feeds.field1", type number}, {"feeds.field2", type number}, {"feeds.field3", type number}, {"feeds.field4", type number}, {"feeds.field5", Int64.Type}, {"feeds.field6", Int64.Type}, {"feeds.field7", Int64.Type}, {"feeds.field8", Int64.Type}}),
+    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"channel.id", "channel.name", "channel.description", "channel.latitude", "channel.longitude"}),
+    #"Renamed Columns" = Table.RenameColumns(#"Removed Columns",{{"feeds.field1", "Soil Moisture (%)"}, {"feeds.field2", "Temperature (°C)"}, {"feeds.field3", "Humidity (%)"}, {"feeds.field4", "Wind Speed (km/h)"}, {"feeds.field5", "Pump Status"}, {"feeds.field6", "Alert Status"}, {"feeds.field7", "Soil Condition"}, {"feeds.field8", "Heat Stress"}}),
+    #"Removed Columns1" = Table.RemoveColumns(#"Renamed Columns",{"channel.field1", "channel.field2", "channel.field3", "channel.field4", "channel.field5", "channel.field6", "channel.field7", "channel.field8", "channel.created_at", "channel.updated_at", "channel.last_entry_id", "feeds.entry_id"}),
+    #"Changed Type1" = Table.TransformColumnTypes(#"Removed Columns1",{{"Pump Status", type text}}),
+    #"Replaced Value" = Table.ReplaceValue(#"Changed Type1","0","OFF",Replacer.ReplaceText,{"Pump Status"}),
+    #"Replaced Value1" = Table.ReplaceValue(#"Replaced Value","1","ON",Replacer.ReplaceText,{"Pump Status"}),
+    #"Changed Type2" = Table.TransformColumnTypes(#"Replaced Value1",{{"Soil Condition", type text}}),
+    #"Replaced Value2" = Table.ReplaceValue(#"Changed Type2","3","Saturated",Replacer.ReplaceText,{"Soil Condition"}),
+    #"Replaced Value3" = Table.ReplaceValue(#"Replaced Value2","2","Normal",Replacer.ReplaceText,{"Soil Condition"}),
+    #"Replaced Value4" = Table.ReplaceValue(#"Replaced Value3","1","Low",Replacer.ReplaceText,{"Soil Condition"}),
+    #"Replaced Value5" = Table.ReplaceValue(#"Replaced Value4","0","Critical",Replacer.ReplaceText,{"Soil Condition"}),
+    #"Changed Type3" = Table.TransformColumnTypes(#"Replaced Value5",{{"Alert Status", type text}}),
+    #"Replaced Value6" = Table.ReplaceValue(#"Changed Type3","0","OFF",Replacer.ReplaceText,{"Alert Status"}),
+    #"Replaced Value7" = Table.ReplaceValue(#"Replaced Value6","1","ON",Replacer.ReplaceText,{"Alert Status"}),
+    #"Changed Type4" = Table.TransformColumnTypes(#"Replaced Value7",{{"Heat Stress", type text}}),
+    #"Replaced Value8" = Table.ReplaceValue(#"Changed Type4","0","Cool",Replacer.ReplaceText,{"Heat Stress"}),
+    #"Replaced Value9" = Table.ReplaceValue(#"Replaced Value8","1","Optimal",Replacer.ReplaceText,{"Heat Stress"}),
+    #"Replaced Value10" = Table.ReplaceValue(#"Replaced Value9","2","Heat Stress Risk",Replacer.ReplaceText,{"Heat Stress"}),
+    #"Renamed Columns1" = Table.RenameColumns(#"Replaced Value10",{{"feeds.created_at", "Created_at"}})
+in
+    #"Renamed Columns1"
