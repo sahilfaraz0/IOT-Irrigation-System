@@ -1,4 +1,7 @@
 # 🌱 Mehrano Agri Farms: Smart IoT Irrigation & Monitoring System
+**Author:** Sahil Faraz | **Date:** April 2026
+
+> **Academic Disclaimer:** This repository contains an academic project for the **Pearson B-TEC HND in Digital Technologies (Cybersecurity) - Unit 20: Internet of Things** module. It is strictly for portfolio and demonstration purposes. Other students may not use or copy this material for their own academic submissions.
 
 ## 📖 Project Overview
 This repository contains a comprehensive, IoT-based smart irrigation and environmental monitoring system developed for Mehrano Agri Farms. Designed as a solution for modern agricultural challenges, this project tackles the critical issue of ineffective irrigation management caused by manual monitoring and fixed watering schedules. 
